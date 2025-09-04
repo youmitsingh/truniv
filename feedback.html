@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ADD Bar Feedback</title>
+  <link rel="stylesheet" href="style/feedback.css"/>
+  <link rel="stylesheet" href="style/styles.css"/>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+  <script defer src="javascript/effects.js"></script>
+  <script defer src="javascript/feedback.js"></script>
+  
+</head>
+<body>
+<div class="big-container">
+  <header>
+    <div class="logo-name">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Logo" class="logo" />
+        <h1>Stellar Stories</h1>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="time.html">Time</a>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="message-top" id="messageTop">
+      <h3 class="main-heading">Thank you for visiting — I hope you're doing well.</h3>
+      <p class="statement">
+        Each chapter includes an ADD bar where you can share your thoughts by sliding the center knob.
+        We recommend submitting feedback after completing all chapters, then saving it in one go.
+        A thoughtfully designed webpage, rich with valuable insights, is coming soon. Stay tuned.
+      </p>
+    </section>
+
+    <section class="output-bar" id="outputBar">
+      <p class="message-for-result">
+        After collecting enough responses, this section will automatically present the aggregated feedback score.
+      </p>
+      <div class="feedback-result">
+        <input class="output-range-circle"
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="output-range"
+          id="outputSlider"
+          disabled
+        />
+        <div class="slider-labels">
+          <span>Disagree</span>
+          <span>Don't know</span>
+          <span>Agree</span>
+        </div>
+        <div class="people-output">The Law of 'People'</div>
+      </div>
+    </section>
+
+    <section class="all-feedback-bars" id="allFeedbackBars">
+      <!-- Law sections without the “LawX:” prefix in UI -->
+      <div class="law-section" id="law1">
+        <div class="law-title">The Law of 'Everything'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider1" />
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="law-section" id="law2">
+        <div class="law-title">The Law of 'Universe'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider2"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="law-section" id="law3">
+        <div class="law-title">The Law of 'Surroundings'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider3"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law4">
+        <div class="law-title">The Law of 'Time'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider4"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law5">
+        <div class="law-title">The Law of 'Bio Machine'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider5"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law6">
+        <div class="law-title">The Law of 'Energy'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider6"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law7">
+        <div class="law-title">The Law of 'Emotions'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider7"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law8">
+        <div class="law-title">The Law of 'Intensity'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider8"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law9">
+        <div class="law-title">The Law of 'Personality'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider9"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="law-section" id="law10">
+        <div class="law-title">The Law of 'Work'</div>
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="range" id="slider10"/>
+          <div class="slider-labels">
+            <span>Disagree</span>
+            <span>Don't know</span>
+            <span>Agree</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form id="feedbackForm">
+      <section class="user-details" id="userDetails">
+        <p class="user-details-message">
+          Please share your details to help us in providing more personalized feedback results.
+        </p>
+        <div class="input-box">
+          <input type="text" id="userName" class="name-input" placeholder="Your good name"/>
+          <input type="email" id="userEmail" class="email-input" placeholder="Your email"/>
+        </div>
+
+        <label for="country-select" class="country-box-label">Choose your country</label>
+        <select id="country-select" class="country-select"></select>
+
+        <div class="gender-form-group">
+          <label for="gender" class="gen-box-label">What pronouns do you use?</label>
+          <select id="gender" name="gen_type" class="gender-select">
+            <option value="He">He</option>
+            <option value="She">She</option>
+            <option value="They">They</option>
+          </select>
+        </div>
+      </section>
+
+      <button type="button" class="save-btn" id="saveBtn">Save feedback</button>
+      <div id="thankYouMessage" class="feedback-confirmation">
+        Thank you for your feedback! 🌟
+      <p class="end-gap">       </p>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <div class="footer-col">
+      <img src="images/logo.png" alt="Logo" class="footer-logo" />
+    </div>
+    <div class="footer-col">
+      <h3>About</h3>
+      <p>Stellar Stories brings you tales from the farthest reaches of space.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>email@stellarstories.com</p>
+      <a href="https://instagram.com/yourprofile" target="_blank">
+        <img src="images/instagram-icon.png" alt="Instagram" class="icon" />
+      </a>
+    </div>
+    <div class="footer-col">
+      <p>© 2025 Stellar Stories. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+ </body>
+</html>
