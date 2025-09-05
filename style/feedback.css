@@ -111,20 +111,14 @@
 /*================= slider Section ================*/
 
 
-
-/*Feedback all chapters slide bar setion*/
-/* Section design inside big container */
-/* All Feedback Bars Container in section*/
-.all-feedback-bars {  
+/* 🌌 Container for all feedback sections */
+.all-feedback-bars {
   padding: 1rem;
+  padding-bottom: 2rem; /* Extra scroll comfort on mobile */
+  box-sizing: border-box;
 }
 
-/* spacing between each law section increased */
-
-/*.law-section + .law-section {
-  margin-top: 500px;
-}*/
-
+/* 🌠 Individual law section */
 .all-law-section {
   background: rgba(255, 255, 255, 0.03);
   border: 2px solid #8ef;
@@ -132,25 +126,113 @@
   padding: 1rem;
   text-align: center;
   box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
-  margin: 9rem auto;
+  margin: 3rem auto;
   width: 80%;
-  min-width: 420px; /* 👈 Prevents excessive horizontal squeezing */
+  max-width: 1000px;
+  min-width: 420px;
   box-sizing: border-box;
 }
 
+/* 📱 Mobile adjustments */
 @media (max-width: 480px) {
   .all-law-section {
-    min-width: 90%; /* 👈 Makes it responsive on smaller screens */
+    width: 95%;
+    min-width: unset;
+    margin: 1.5rem auto;
+    padding: 0.75rem;
+  }
+
+  .law-title {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .slider-container {
+    width: 100%;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .slider-labels {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    min-width: unset;
   }
 }
 
-/* Law text title of chapters name */
+/* 🌌 Container for all feedback sections */
+.all-feedback-bars {
+  padding: 1rem;
+  padding-bottom: 2rem; /* Extra scroll comfort on mobile */
+  box-sizing: border-box;
+}
+
+/* 🌠 Individual law section */
+.all-law-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid #8ef;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
+  margin: 6rem auto;
+  width: 80%;
+  max-width: 1000px;
+  min-width: 420px;
+  box-sizing: border-box;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+  .all-law-section {
+    width: 95%;
+    min-width: unset;
+    margin: 1.5rem auto;
+    padding: 0.75rem;
+  }
+
+  .law-title {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .slider-container {
+    width: 100%;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .slider-labels {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* 🌌 Law title styling */
 .law-title {
   background: rgba(215, 215, 215, 0.03);
-  /*on full expension*/
-  min-width: 300px; /*on small screen*/ 
-  width: 50%; /* Makes it scale on smaller screens */
-  text-align: center; 
+  width: 50%;
+  min-width: 300px;
+  text-align: center;
   box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
   box-sizing: border-box;
   padding: 1.5rem 1rem;
@@ -160,37 +242,31 @@
   color: #e1e1e1;
 }
 
-/*Slider Bar Design*/
+/* 🎛️ Slider container */
 .slider-container {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
   padding: 0.5rem;
   gap: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
-
-    /*&&&&&&&&&&&&&&&&&&&&&&& sliderbar inside design &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
-
-
+/* 🎚️ Slider track */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 80%;
   min-width: 333px;
-  /*background: #ff0217;*/
-  /*border-radius: 0px;*/
-  pointer-events: none; /* Disable interaction on the bar */
   height: 6px;
-  background: #e0e0e0; /*this is for output bar*/
+  background: #e0e0e0;
   border-radius: 6px;
   margin: 20px 0 5px;
   cursor: pointer;
+  pointer-events: none;
 }
 
 input[type="range"].range {
@@ -198,6 +274,7 @@ input[type="range"].range {
   width: 93%;
 }
 
+/* 🧿 Slider thumb – WebKit */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -206,93 +283,31 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: rgb(255, 114, 75);
   cursor: pointer;
-  pointer-events: auto; /* Enable interaction on the handle */
+  pointer-events: auto;
 }
 
+/* 🧿 Slider thumb – Firefox */
 input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background: orange;
   cursor: pointer;
-  pointer-events: auto; /* Enable interaction on the handle */
+  pointer-events: auto;
 }
 
-            /*&&&&&&&&&&&&&&&&&&&&&&& sliderbar inside design &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
-
-
-
-.slider-labels {
-  display: flex;
-  justify-content: flex-start; /* Align items to the left */
-  gap: 6rem;                   /* Increase spacing between labels */
-  width: 96%;
-  margin-top: 4px;
-  font-size: 0.75rem;
-  /*flex-wrap: wrap;
-  justify-content: space-around;*/
-  /*text-align: center;*/
-  /*display: flex;*/
-  justify-content: space-between;
-  color: #fefefe;
-  opacity: 0.8;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-
-/*================= slider  Section ================*/
-
-
-
-
-/* Individual Law Section */
-.law-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 2px solid #8ef;
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 0rem auto;
-  max-width: 1000px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
-  padding: 1rem;
-  margin: 1rem auto;
-  width: 95%;
-  box-sizing: border-box;
-}
-
-
-
-
-
+/* 💠 Custom range thumb styling */
 .range {
   width: 100%;
+  height: 5px;
 }
-@media (max-width: 480px) {
-  .law-section {
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-  }
 
-  
-
-  .range {
-    height: 5px;
-  }
-
-  
-
-
-
-/* Slider Thumb */
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 24px;
   height: 24px;
   background: #8ef;
-   /* Diamond shape */
   cursor: pointer;
   box-shadow: 0 0 6px rgba(142, 239, 255, 0.4);
   transition: transform 0.3s ease;
@@ -302,7 +317,6 @@ input[type="range"]::-moz-range-thumb {
   transform: scale(1.1);
 }
 
-/* Firefox Thumb */
 .range::-moz-range-thumb {
   width: 24px;
   height: 24px;
@@ -312,7 +326,18 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 0 6px rgba(142, 239, 255, 0.4);
 }
 
-/* Slider Labels */
+/* 🏷️ Slider labels */
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  width: 96%;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #fefefe;
+  opacity: 0.8;
+}
+
 
 
 
