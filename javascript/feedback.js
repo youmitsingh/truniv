@@ -1,54 +1,27 @@
-// 1) Firebase config & init (compat libs are loaded in index.html)
-const firebaseConfig = {
-  apiKey: "AIzaSyASaviWiqoOs-LwPY7h_YK8FOR7XmcvNhc",
-  authDomain: "true-mentor-333.firebaseapp.com",
-  databaseURL: "https://true-mentor-333-default-rtdb.firebaseio.com",
-  projectId: "true-mentor-333",
-  storageBucket: "true-mentor-333.appspot.com",
-  messagingSenderId: "547191896944",
-  appId: "1:547191896944:web:73767c9517fe432afc2db5"
-};
-firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-const auth = firebase.auth();
-
-
-// 2) anonymous auth helper
-function ensureAuth() {
-  if (auth.currentUser) return Promise.resolve(auth.currentUser);
-  return new Promise((resolve, reject) => {
-    const unsub = auth.onAuthStateChanged(user => {
-      unsub();
-      if (user) return resolve(user);
-      auth.signInAnonymously()
-        .then(cred => resolve(cred.user))
-        .catch(reject);
-    }, reject);
-  });
-}
-
 
 // 3) country list & DOM wiring
-const countries = [
-  "UK","China","Germany","Japan","India","USA","France","Italy",
-  "Canada","South Korea","Russia","Brazil","Australia","Mexico",
-  "Spain","Indonesia","Netherlands","Saudi Arabia","Turkey","Switzerland","Not Found"
-];
-
 document.addEventListener("DOMContentLoaded", () => {
   const countrySelect = document.getElementById("country-select");
+
   if (countrySelect) {
+    const countries = [
+      "UK", "China", "Germany", "Japan", "India", "USA", "France", "Italy",
+      "Canada", "South Korea", "Russia", "Brazil", "Australia", "Mexico",
+      "Spain", "Indonesia", "Netherlands", "Saudi Arabia", "Turkey", "Switzerland", "Not Found"
+    ];
+
     countries.forEach(c => {
       const opt = document.createElement("option");
       opt.value = c;
       opt.textContent = c;
       countrySelect.appendChild(opt);
     });
-  }
-
+  } 
   const saveBtn = document.getElementById("saveBtn");
   if (saveBtn) saveBtn.addEventListener("click", saveData);
 });
+
+
 
 
 // 4) Collect slider values and produce zero-padded keys (Law01..Law10)

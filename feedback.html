@@ -37,7 +37,7 @@
         After collecting enough responses, this section will automatically present the aggregated feedback score.
       </p>
       <div class="feedback-result">
-        <input class="output-range-circle"
+        <input type="range" class="output-range-circle"
           type="range"
           min="0"
           max="100"
@@ -46,7 +46,7 @@
           id="outputSlider"
           disabled
         />
-        <div class="slider-labels">
+        <div class="slider-labels-output">
           <span>Disagree</span>
           <span>Don't know</span>
           <span>Agree</span>
@@ -179,7 +179,7 @@
       </div>
     </section>
 
-    <form id="feedbackForm">
+    <form class = "feedback-form" id="feedbackForm">
       <section class="user-details" id="userDetails">
         <p class="user-details-message">
           Please share your details to help us in providing more personalized feedback results.
@@ -189,9 +189,22 @@
           <input type="email" id="userEmail" class="email-input" placeholder="Your email"/>
         </div>
 
-        <label for="country-select" class="country-box-label">Choose your country</label>
-        <select id="country-select" class="country-select"></select>
-
+          <!--<div class="age-form-group">
+            <label for="age" class="age-box-label">Your age group</label>
+            <select id="age" name="age_group" class="age-select">
+              <option value="Under 18">Under 18</option>
+              <option value="18-24">18-24</option>
+              <option value="25-34">25-34</option>
+              <option value="35-44">35-44</option>
+              <option value="45-54">45-54</option>
+              <option value="55-64">55-64</option>
+              <option value="65 or older">65 or older</option>
+            </select>
+          </div>-->
+         <div class = "countyr-form-group">
+          <label for="country-select" class="country-box-label">Choose your country</label>
+          <select  id="country-select" class="country-select"></select>
+        </div>
         <div class="gender-form-group">
           <label for="gender" class="gen-box-label">What pronouns do you use?</label>
           <select id="gender" name="gen_type" class="gender-select">
@@ -229,5 +242,6 @@
     </div>
   </footer>
 </div>
+    <script src="javascript/feedback.js" defer></script>
  </body>
 </html>

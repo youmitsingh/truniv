@@ -13,7 +13,7 @@ body {
   border: 2px solid #8ef;                     /* Light blue cosmic border */
   border-radius: 12px;                        /* Smooth rounded corners */
   padding: 0rem;                              /* Inner breathing space */
-  margin: 2rem auto;                          /* Centered with vertical spacing */
+  margin: 0.5rem auto;                          /* Centered with vertical spacing */
   max-width: 1000px;                           /* Prevents stretching too wide */
   background: rgba(255, 255, 255, 0.05);      /* Subtle translucent backdrop */
   box-shadow: 0 0 20px rgba(142, 239, 255, 0.2); /* Soft glow around the box */
@@ -22,8 +22,8 @@ body {
 @media (max-width: 768px) {
   .big-container {
     padding: 0rem;
-    margin: 1rem;
-    width: 95%;
+    margin: 1rem auto;
+    width: 100%;
   }
 }
 
