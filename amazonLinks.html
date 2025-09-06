@@ -59,24 +59,24 @@
       border: 1px solid #ccc;
     }
 
-   @media (max-width: 600px) {
+   @media (max-width: 300px) {
   .link-item {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .right-text-country-container {
-    margin-top: 0.5rem;
-  }
 }
 
     .right-text-country-container {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;         /* 👈 Prevents it from shrinking too much */
-        white-space: nowrap;    /* 👈 Prevents wrapping */
-        color: #51d0d7;
-    }
+  flex-shrink: 0;
+  margin-left: auto; /* 👈 Pushes it away from .link-button */
+  padding-left: 1rem; /* 👈 Adds breathing space */
+  white-space: nowrap;
+  color: #51d0d7;
+  display: flex;
+  align-items: center;
+}
+
     .link-button {
   display: flex;
   align-items: center;
