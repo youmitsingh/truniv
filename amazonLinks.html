@@ -12,76 +12,92 @@
       padding: 2rem;
     }*/
 
-    h1 {
+    h2 {
       text-align: center;
       margin-bottom: auto;
-      margin-top: auto;
+      margin-top: 1rem;
+    }
+    .description {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #ccc;
     }
 
     .link-list {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 2rem;
       max-width: 500px;
       margin: 0 auto;
     }
 
-    .link-item {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+   .link-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Controls spacing between children */
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        flex-wrap: nowrap; /* 👈 Prevents wrapping */
+
     }
+    
 
     .link-item:hover {
       background: rgba(255, 255, 255, 0.15);
     }
 
     .flag {
-      width: 32px;
+      width: 28px;
       height: 20px;
-      margin-right: 1rem;
+      margin-right: 0.1rem;
       object-fit: cover;
       border: 1px solid #ccc;
     }
 
-    .link-button {
-      color: #8ef;
-      text-decoration: none;
-      font-weight: bold;
-    }
+   @media (max-width: 600px) {
+  .link-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    @media (max-width: 600px) {
-      .link-item {
-        flex-direction: row;
-        justify-content: flex-start;
-      }
-    }
+  .right-text-country-container {
+    margin-top: 0.5rem;
+  }
+}
+
     .right-text-country-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-right: 20px;
-      margin-left: auto;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;         /* 👈 Prevents it from shrinking too much */
+        white-space: nowrap;    /* 👈 Prevents wrapping */
         color: #51d0d7;
     }
     .link-button {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  color: #8ef;
+  flex-shrink: 1;     /* 👈 Allows it to compress */
+  min-width: 0;       /* 👈 Prevents overflow */
   text-decoration: none;
+  color: #8ef;
   font-weight: bold;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
   transition: background 0.3s ease;
 }
 
 .link-button:hover {
   background: rgba(255, 255, 255, 0.15);
+}
+.launching-soon {
+  font-size: 0.9rem;
+  color: #f0fcff;
 }
   </style>
   <link rel="stylesheet" href="style/styles.css" />
@@ -101,110 +117,11 @@
               <a href="time.html">Time</a>
             </nav>
         </header>
-            <main
-                <h1>Visit Amazon in Your Country</h1>
-                <div class="link-list">
-                    <p>Click your country to buy "True Phases of Life" on Amazon:</p>
-                    <div class="link-item">        
-                        <a href="https://www.amazon.com.au/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/au.png" alt="Australia" class="flag" />Australia</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com.be" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/be.png" alt="Belgium" class="flag" />Belgium</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com.br" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/br.png" alt="Brazil" class="flag" />Brazil</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.ca/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/ca.png" alt="Canada" class="flag" />Canada</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.cn" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/cn.png" alt="China" class="flag" />China</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.eg" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/eg.png" alt="Egypt" class="flag" />Egypt</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.fr/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/fr.png" alt="France" class="flag" />France</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.de/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/de.png" alt="Germany" class="flag" />Germany</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.in" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/in.png" alt="India" class="flag" />India</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.it/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/it.png" alt="Italy" class="flag" />Italy</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.co.jp/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/jp.png" alt="Japan" class="flag" />Japan</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com.mx" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/mx.png" alt="Mexico" class="flag" />Mexico</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.nl/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/nl.png" alt="Netherlands" class="flag" />Netherlands</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.pl/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/pl.png" alt="Poland" class="flag" />Poland</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.sa" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/sa.png" alt="Saudi Arabia" class="flag" />Saudi Arabia</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.sg" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/sg.png" alt="Singapore" class="flag" />Singapore</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.es/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/es.png" alt="Spain" class="flag" />Spain</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.se/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/se.png" alt="Sweden" class="flag" />Sweden</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com.tr" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/tr.png" alt="Turkey" class="flag" />Turkey</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.ae" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/ae.png" alt="UAE" class="flag" />United Arab Emirates</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.co.uk/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/gb.png" alt="UK" class="flag" />United Kingdom</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/us.png" alt="USA" class="flag" />United States</a>
-                    </div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.com" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/co.png" alt="Redirect to US" class="flag" />Colombia</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.cn" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/cn.png" alt="Redirect to CN" class="flag" />China</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
-                    <div class="link-item">
-                    <a href="https://www.amazon.sg" class="link-button" target="_blank">
-                        <img src="https://flagcdn.com/32x24/sg.png" alt="Redirect to SG" class="flag" />Singapore</a>
-                    <div class="right-text-country-container"><p>Launching soon...</p></div></div>
+            <main></main>
+                <h2 class="heading">Visit Amazon in Your Country</h2>
+                   <div class="link-list">
+                    <p class="description">Click your country to buy "True Phases of Life" on Amazon:</p>
+                    <div id="countryLinksContainer"></div>
                 </div>
                 <div class="above-footer"></div>
                 <footer>
@@ -228,5 +145,96 @@
                 </footer>
                 </main>
             </div>
+               
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const countries = [
+    {
+      name: "Canada",
+      code: "ca",
+      url: "https://www.amazon.ca/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/",
+      launchingSoon: false
+    },
+    {
+      name: "China",
+      code: "cn",
+      url: "https://www.amazon.cn",
+      launchingSoon: true
+    },
+    {
+      name: "Egypt",
+      code: "eg",
+      url: "https://www.amazon.eg",
+      launchingSoon: true
+    },
+    {
+      name: "France",
+      code: "fr",
+      url: "https://www.amazon.fr/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/",
+      launchingSoon: false
+    },
+    {
+      name: "Germany",
+      code: "de",
+      url: "https://www.amazon.de/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB/",
+      launchingSoon: false
+    },
+    { name: "India", code: "in", url: "https://www.amazon.in", launchingSoon: true },
+    { name: "Italy", code: "it", url: "https://www.amazon.it/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Japan", code: "jp", url: "https://www.amazon.co.jp/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Mexico", code: "mx", url: "https://www.amazon.com.mx", launchingSoon: true },
+    { name: "Netherlands", code: "nl", url: "https://www.amazon.nl/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Poland", code: "pl", url: "https://www.amazon.pl/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Saudi Arabia", code: "sa", url: "https://www.amazon.sa", launchingSoon: true },
+    { name: "Singapore", code: "sg", url: "https://www.amazon.sg", launchingSoon: true },
+    { name: "Spain", code: "es", url: "https://www.amazon.es/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Sweden", code: "se", url: "https://www.amazon.se/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Turkey", code: "tr", url: "https://www.amazon.com.tr", launchingSoon: true },
+    { name: "United Arab Emirates", code: "ae", url: "https://www.amazon.ae", launchingSoon: true },
+    { name: "United Kingdom", code: "gb", url: "https://www.amazon.co.uk/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "United States", code: "us", url: "https://www.amazon.com/True-Phases-Life-Rediscovering-Truth/dp/B0FLWN7ZRB", launchingSoon: false },
+    { name: "Colombia", code: "co", url: "https://www.amazon.com", launchingSoon: true },
+    { name: "China", code: "cn", url: "https://www.amazon.cn", launchingSoon: true },
+    { name: "Singapore", code: "sg", url: "https://www.amazon.sg", launchingSoon: true }
+];
+
+  const container = document.getElementById("countryLinksContainer");
+
+  countries.forEach(({ name, code, url, launchingSoon }) => {
+    const linkItem = document.createElement("div");
+    linkItem.className = "link-item";
+
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.className = "link-button";
+    anchor.target = "_blank";
+
+    const flag = document.createElement("img");
+    flag.src = `https://flagcdn.com/32x24/${code}.png`;
+    flag.alt = name;
+    flag.className = "flag";
+
+    anchor.appendChild(flag);
+    anchor.appendChild(document.createTextNode(name));
+    linkItem.appendChild(anchor);
+
+    if (launchingSoon) {
+      const soonContainer = document.createElement("div");
+      soonContainer.className = "right-text-country-container";
+
+      const soonText = document.createElement("p");
+      soonText.className = "launching-soon";
+      soonText.textContent = "Launching soon...";
+
+      soonContainer.appendChild(soonText);
+      linkItem.appendChild(soonContainer);
+    }
+
+    container.appendChild(linkItem);
+  });
+});
+</script>
+
             </body>
 </html>
