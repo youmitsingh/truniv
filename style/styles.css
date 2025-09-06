@@ -164,11 +164,17 @@ main {
   width: 40%;
   max-width: 500px;
   height: auto;
-  filter: drop-shadow(0 0 12px rgba(142, 239, 255, 0.4)); /* 👈 Soft glow */
-  transition: filter 0.3s ease;
   background: transparent;
-  border-radius: 0; /* Optional: remove if image is already shaped */
+  border-radius: 0;
+
+  filter: drop-shadow(0 0 12px rgba(142, 239, 255, 0.4));
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  transform: translateY(0);
+  opacity: 1;
+
+
 }
+
 @media (max-width: 200px) {
   .giver-receiver {
     max-width: 100%;     /* 👈 Full width on small screens */

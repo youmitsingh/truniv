@@ -18,28 +18,41 @@ function pulseNebula() {
   }
 }
 
-// 🔄 Dynamic Equation Update
+// 🔄 Dynamic Equation and image Update
 const eq = document.querySelector('.equation');
+const img = document.querySelector('.giver-receiver');
 let current = true;
 
 setInterval(() => {
-  // Fade out
+  // Slide up
+  img.style.transform = 'translateY(-5px)';
+  img.style.opacity = 0.6;
+
   eq.style.opacity = 0;
 
   setTimeout(() => {
-    // Update text after fade out
+    // Switch image
+    img.src = current
+      ? 'images/giver-receiver.png'
+      : 'images/giver-receiver-alt.png';
+
+    // Switch equation
     eq.textContent = current
       ? 'EIO = EII + ( + EITr )'
       : 'EIO = EII + ( - EITr )';
 
     current = !current;
 
-    // Fade in
+    // Slide down
+    img.style.transform = 'translateY(0)';
+    img.style.opacity = 1;
     eq.style.opacity = 1;
-  }, 400); // Match the CSS transition duration
+  }, 300); // Quick switch timing
 }, 1000);
 
-// 🔄 Dynamic Equation end
+
+
+// 🔄 Dynamic Equation and image end
 
 //fetching text from content file
 fetch('content/index-content.txt')
