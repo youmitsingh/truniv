@@ -25,6 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // 4) Collect slider values and produce zero-padded keys (Law01..Law10)
+
+async function ensureAuth() {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      unsubscribe();
+      if (user) {
+        resolve(user);
+      } else {
+        reject(new Error("User not authenticated"));
+      }
+    });
+  });
+}
+
 function collectResponses() {
   const sliders = Array.from(
     document.querySelectorAll(".all-feedback-bars input[type=range]")

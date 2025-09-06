@@ -39,6 +39,8 @@ setInterval(() => {
   }, 400); // Match the CSS transition duration
 }, 1000);
 
+// 🔄 Dynamic Equation end
+
 //fetching text from content file
 fetch('content/index-content.txt')
   .then(response => response.text())
