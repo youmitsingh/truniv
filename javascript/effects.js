@@ -18,6 +18,34 @@ function pulseNebula() {
   }
 }
 
+// 🔄 Dynamic Equation Update
+const eq = document.querySelector('.equation');
+let current = true;
+
+setInterval(() => {
+  // Fade out
+  eq.style.opacity = 0;
+
+  setTimeout(() => {
+    // Update text after fade out
+    eq.textContent = current
+      ? 'EIO = EII + ( + EITr )'
+      : 'EIO = EII + ( - EITr )';
+
+    current = !current;
+
+    // Fade in
+    eq.style.opacity = 1;
+  }, 400); // Match the CSS transition duration
+}, 1000);
+
+//fetching text from content file
+fetch('content/index-content.txt')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('dynamicText').innerText = data;
+  });
+
 // 🌌 Parallax Drift on Scroll
 window.addEventListener("scroll", () => {
   const bg = document.querySelector(".background-layer");
@@ -26,6 +54,7 @@ window.addEventListener("scroll", () => {
     bg.style.transform = `translateY(${offset}px)`;
   }
 });
+
 
 // 🌠 Loop Effects
 setInterval(createStarShower, 800);   // New star every 0.8s

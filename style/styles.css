@@ -23,6 +23,7 @@ body {
   .big-container {
     padding: 0rem;
     width: 100%;
+    margin: 1rem auto 0 auto; 
   }
 }
 
@@ -108,6 +109,12 @@ header {
 
 .logo {
   height: 50px;
+  background: transparent; /* No visible background */
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)); /* Soft cosmic glow */
+  transition: filter 0.3s ease;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 20px rgba(192, 247, 255, 0.8)); /* Intensified glow on hover */
 }
 .logo-right-title {
   font-size: 1.5rem;
@@ -133,13 +140,87 @@ header {
           color: #aef;
         }
 
+    
 
 /* Main */
 main {
   padding: 2rem;
   text-align: center;
 }
-/*book-cover-body-style*/
+
+/*giever receieve-main*/
+.giver-receiver-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;              /* 👈 Remove padding that creates spacing */
+  background: transparent; /* 👈 No background at all */
+  box-shadow: none;        /* 👈 Remove shadow from wrapper */
+}
+
+.giver-receiver {
+  width: 40%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(142, 239, 255, 0.4)); /* 👈 Soft glow */
+  transition: filter 0.3s ease;
+  background: transparent;
+  border-radius: 0; /* Optional: remove if image is already shaped */
+}
+@media (max-width: 200px) {
+  .giver-receiver {
+    max-width: 100%;     /* 👈 Full width on small screens */
+    filter: drop-shadow(0 0 8px rgba(142, 239, 255, 0.3)); /* 👈 Softer glow */
+  }
+}
+
+/* Equationsection-start */
+.equation-div {
+  text-align: center;
+  margin-block: clamp(3rem, 3vw, 3rem);
+}
+
+.equation {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #8ef;
+  text-shadow: 0 0 8px rgba(142, 240, 255, 0.427);
+  animation: pulseGlow 2s infinite;
+  transition: all 0.4s ease;
+  text-align: center;
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 8px rgba(142, 239, 255, 0.6);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(142, 239, 255, 0.9);
+    opacity: 0.7;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(142, 239, 255, 0.6);
+    opacity: 1;
+  }
+}
+/* Equationsection-end */
+
+/*dynamic-content-start*/
+.dynamic-text {
+  text-align: left;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  color: #f0fcff;
+}
 
 .hero {
   max-width: 900px;
