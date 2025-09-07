@@ -86,9 +86,11 @@ async function saveData() {
   };
   console.log("Saving entry:", entry);
 
+
   try {
+    // Always require auth and write to feedbacks/{uid}
     const user = await ensureAuth();
-    await database.ref(`feedbacks/${user.uid}`).push(entry);
+    await window.database.ref(`feedbacks/${user.uid}`).push(entry);
 
     if (msg) {
       msg.style.display = "block";
