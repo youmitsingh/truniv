@@ -225,6 +225,27 @@
       <p class="end-gap">       </p>
       </div>
     </form>
+
+    <!-- TEMP: Google Sign-In Button for UID retrieval -->
+    <div id="temp-signin-container" style="margin:2em 0; padding:1em; border:1px solid #ccc; background:#f9f9f9;">
+      <h3>tem-project-getting-UID: Admin Sign-In (Temporary)</h3>
+      <button id="googleSignInBtn">Sign in with Google</button>
+      <div id="uidResult" style="margin-top:1em; color:green;"></div>
+    </div>
+    <script>
+      document.getElementById('googleSignInBtn').onclick = function() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+          .then(function(result) {
+            var user = result.user;
+            document.getElementById('uidResult').textContent = 'Your UID: ' + user.uid;
+          })
+          .catch(function(error) {
+            document.getElementById('uidResult').textContent = 'Error: ' + error.message;
+          });
+      };
+    </script>
+    <!-- END TEMP SIGN-IN -->
   </main>
   <footer>
     <div class="footer-col">
