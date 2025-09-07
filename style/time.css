@@ -1,0 +1,149 @@
+.ring-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 60px auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LP Circles at triangle corners */
+    .lp-circle1 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #c23636 60%, #ff8a8a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 0 18px 4px #00eaff55;
+    z-index: 3;
+    user-select: none;
+}
+.lp-circle1 span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.lp-circle2 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #05bc45 60%, #77ff5b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 0 18px 4px #00eaff55;
+    z-index: 3;
+    user-select: none;
+}
+.lp-circle2 span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.lp-circle3 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3a2cf5 60%, #6c6fff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 0 18px 4px #00eaff55;
+    z-index: 3;
+    user-select: none;
+}
+.lp-circle3 span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Equilateral triangle placement (centered on ring-container) */
+.lp1 {
+  left: 50%;
+  top: -5px;
+  transform: translate(-50%, 0);
+}
+.lp2 {
+  left: 15px;
+  top: 180px;
+  transform: none;
+}
+.lp3 {
+  right: 15px;
+  top: 177px;
+  transform: none;
+}
+
+/* Shiny dots */
+.dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;;
+  box-shadow: 0 0 24px 8px #fff8, 0 0 8px 2px #fff4;
+}
+
+.dot-outer {
+  background: radial-gradient(circle at 30% 30%, #fff, #e0f7fa 60%, #00eaff00 100%);
+  box-shadow: 0 0 32px 12px #fff8, 0 0 12px 4px #00eaff88;
+}
+
+.dot-outer.pulse-blue {
+  box-shadow:
+    0 0 80px 40px #2196f3ee,
+    0 0 48px 24px #00eaffee,
+    0 0 24px 8px #fff8,
+    0 0 8px 2px #fff4;
+  background: radial-gradient(circle at 30% 30%, #fff, #42a5f5 70%, #00eaff00 100%);
+  filter: brightness(1.5) saturate(2);
+  transition: box-shadow 0.4s, background 0.4s, filter 0.4s;
+}
+
+.dot-inner {
+  background: radial-gradient(circle at 70% 70%, #fff, #ff9800 60%, #ff174400 100%);
+  box-shadow: 0 0 24px 8px #ff7043cc, 0 0 8px 2px #fff4;
+}
+
+/* Outer ring */
+.outer-ring {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 6px solid #80f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Inner ring */
+.inner-ring {
+  position: absolute;
+  width: 228px;
+  height: 228px;
+  border: 6px solid #80f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}

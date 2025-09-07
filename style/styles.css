@@ -124,23 +124,24 @@ header {
 
         .nav-links {
           display: flex;
-          gap: 2rem;              /* Adds space between Feedback and Time */
-          margin-left: auto;        /* Pushes nav to the right side of header */
-          padding-right: 1rem;  
+          flex-direction: row;         /* Default: horizontal layout for desktop */
+          gap: 2rem;
+          margin-left: auto;
+          padding-right: 1rem;
         }
+
         .nav-links a {
           color: #8ef;
           text-decoration: none;
           font-weight: bold;
           transition: color 0.3s ease;
-
         }
 
         .nav-links a:hover {
           color: #aef;
         }
 
-    
+  
 
 /* Main */
 main {
@@ -373,7 +374,7 @@ footer {
 }
 
 .footer-logo {
-  width: 100%;
+  width: 50%;
   max-width: 120px;     /* Controls how large it gets on big screens */
   height: auto;         /* Maintains aspect ratio */
   margin-bottom: 0.5rem;
@@ -421,8 +422,11 @@ footer p {
     gap: 0.5rem;
   }
   .nav-links {
-    right: 1rem;
+    flex-direction: column;    /* Stack vertically on smaller screens */
+    align-items: flex-end;     /* Align to the right side of header */
     gap: 0.5rem;
+    padding-right: 1rem;
+
   }
   main {
     padding: 1rem;
