@@ -1,3 +1,7 @@
+  // Helper for random interval in seconds
+  function getRandomInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 // Animate two shiny dots exactly on the ring tracks
 window.addEventListener('DOMContentLoaded', () => {
   const outerDot = document.querySelector('.dot-outer');
@@ -9,17 +13,18 @@ window.addEventListener('DOMContentLoaded', () => {
   const containerRect = ringContainer.getBoundingClientRect();
   const center = { x: 150, y: 150 }; // 300x300 container
   // Ring radii: (outer ring: 280px diameter, border 10px) => center to middle of border
-  const outerRadius = 170; // 280/2
+  const outerRadius = 172; // 280/2
   // Place dot on the center of the border visually
   const outerDotOffset = 0; // visually, dot is centered
   // Inner ring: 180px diameter, border 8px
-  const innerRadius = 123; // 230/2
+  const innerRadius = 125; // 230/2
   const innerDotOffset = 0;
 
   let tOuter = 0;
   let tInner = 0;
-  const outerSpeed = 0.012; // control speed of outer dot
+  let outerSpeed = 0.012; // control speed of outer dot (will change)
   let innerSpeed = 0.018; // control speed of inner dot (will change)
+
 
 
   // Pulse effect for outer dot
@@ -30,13 +35,41 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 500); // pulse duration
   }
 
-  // Update innerSpeed every 9 seconds and pulse outer dot
+  // Pulse effect for inner dot
+  function pulseInnerDot() {
+    innerDot.classList.add('pulse-red');
+    setTimeout(() => {
+      innerDot.classList.remove('pulse-red');
+    }, 500); // pulse duration
+  }
+
+
+
+  // Update innerSpeed every 9 seconds and pulse both dots
   function updateInnerSpeed() {
-    innerSpeed = Math.random() * (0.03 - 0.01) + 0.01;
+    innerSpeed = Math.random() * (0.05 - 0.01) + 0.01;
+    pulseInnerDot();
     pulseOuterDot();
-    setTimeout(updateInnerSpeed, 9000);
+    setTimeout(updateInnerSpeed, getRandomInterval(3, 13) * 1000);
   }
   updateInnerSpeed();
+
+  // Update outerSpeed every 9 seconds with a different range (e.g., 0.006 to 0.018)
+  function updateOuterSpeed() {
+    outerSpeed = Math.random() * (0.03 - 0.006) + 0.006;
+    setTimeout(updateOuterSpeed, getRandomInterval(3, 13) * 1000);
+  }
+  updateOuterSpeed();
+
+  // Update outerSpeed every 9 seconds (optional, if you want both to be random)
+  /*
+  function updateOuterSpeed() {
+    outerSpeed = Math.random() * (0.03 - 0.01) + 0.01;
+    setTimeout(updateOuterSpeed, 9000);
+  }
+  updateOuterSpeed();
+  */
+
 
   function animate() {
     tOuter += outerSpeed;

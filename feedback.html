@@ -10,20 +10,29 @@
 <body>
 <div class="big-container">
   <header>
-    <div class="logo-name">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.svg" alt="Logo" class="logo" />
-        <h1>Stellar Stories</h1>
-      </a>
+      <div class="logo-name">
+          <a href="index.html" class="logo-link">
+              <img src="images/logo-lp.svg" alt="Logo" class="logo" />
+              <h1>True Phases of Life</h1>
+          </a>
+      </div>
+      
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="time.html">Time</a>
-    </nav>
+       
+       <nav class="nav-links"> 
+              <div class="dropdown">
+                <button class="dropbtn">Menu &#9662;</button>
+                <div class="dropdown-content">
+                  <a href="about.html">About</a>
+                  <a href="feedback.html">Feedback</a>
+                  <a href="time.html">Time</a>
+                  <a href="amazonLinks.html">Get Your Copy</a>
+                </div>
+              </div>
+        </nav>
   </header>
 
   <main class="main-container">
@@ -181,8 +190,9 @@
           Please share your details to help us in providing more personalized feedback results.
         </p>
         <div class="input-box">
-          <input type="text" id="userName" class="name-input" placeholder="Your good name"/>
-          <input type="email" id="userEmail" class="email-input" placeholder="Your email"/>
+          <input type="text" id="userName" class="name-input" placeholder="What's your name?"/>
+          <label for="country-select" class="country-box-label">Provide your email to update with new Information</label>
+          <input type="email" id="userEmail" class="email-input" placeholder="Email"/>
         </div>
 
           <!--<div class="age-form-group">
@@ -219,25 +229,25 @@
     </form>
 
   </main>
-  <footer>
-    <div class="footer-col">
-      <img src="images/logo.svg" alt="Logo" class="footer-logo" />
-    </div>
-    <div class="footer-col">
-      <h3>About</h3>
-      <p>Stellar Stories brings you tales from the farthest reaches of space.</p>
-    </div>
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <p>email@stellarstories.com</p>
-      <a href="https://instagram.com/yourprofile" target="_blank">
-        <img src="images/instagram-icon.png" alt="Instagram" class="icon" />
-      </a>
-    </div>
-    <div class="footer-col">
-      <p>© 2025 Stellar Stories. All rights reserved.</p>
-    </div>
-  </footer>
+        <div class="above-footer"></div>
+          <footer>
+                <div class="footer-container">
+                    <div class="footer-row footer-row-top">
+                        <div class="footer-contact">
+                            <span class="footer-connect-label">Connect:</span> <a href="mailto:email@stellarstories.com" class="footer-email">email@stellarstories.com</a>
+                        </div>
+                        <div class="footer-social">
+                            <span class="footer-social-label">Social platform and communities:</span>
+                            <a href="https://www.instagram.com/truniv.life/" target="_blank" aria-label="Instagram"><img src="images/instagram-icon.png" alt="Instagram" class="insta-icon" /></a>
+                            <a href="https://discord.com/" target="_blank" aria-label="Discord"><img src="images/discord-icon.svg" alt="Discord" class="discord-icon" /></a>
+                        </div>
+                    </div>
+                    <div class="footer-row footer-row-bottom">
+                        <img src="images/truniv-logo.png" alt="Logo" class="footer-logo" />
+                        <p class="copy-rights">© 2025 True Phases of Life. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
 </div>
   <script src="javascript/firebase-file.js"></script>
   <script src="javascript/feedback.js"></script>

@@ -1,3 +1,46 @@
+// Dropdown menu toggle (click to open/close)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.dropbtn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const dropdown = btn.closest('.dropdown');
+      const content = dropdown.querySelector('.dropdown-content');
+      // Toggle open/close
+      if (content.style.display === 'block') {
+        content.style.display = '';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        // Close any other open dropdowns
+        document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+          dc.style.display = '';
+        });
+        content.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+  // Close dropdown when a menu option is clicked
+  document.querySelectorAll('.dropdown-content a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      const dropdown = link.closest('.dropdown');
+      const content = dropdown.querySelector('.dropdown-content');
+      const btn = dropdown.querySelector('.dropbtn');
+      content.style.display = '';
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // Close dropdown if click outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-content').forEach(function(dc) {
+        dc.style.display = '';
+      });
+      document.querySelectorAll('.dropbtn').forEach(function(btn) {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+});
 // 🌌 Star Shower Generator
 function createStarShower() {
   const star = document.createElement("div");
@@ -14,7 +57,7 @@ function pulseNebula() {
   const glow = document.querySelector(".nebula-glow");
   if (glow) {
     glow.style.opacity = 0.3 + Math.random() * 0.7;
-    glow.style.transform = `scale(${1 + Math.random() * 0.2})`;
+    glow.style.transform = `scale(${1 + Math.random() * 0.4})`;
   }
 }
 

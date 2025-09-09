@@ -1,3 +1,16 @@
+/* Spacing for two-dots-orbiting section */
+.two-dots-orbiting h2 {
+  margin-bottom: 3.3rem;
+  font-size: 2rem;
+}
+.two-dots-orbiting .outer-ring-shell {
+  margin-bottom: 1.2rem;
+}
+.two-dots-orbiting p {
+  margin-top: 2.6rem;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .ring-container {
   position: relative;
   width: 300px;
@@ -123,6 +136,17 @@
   transition: box-shadow 0.4s, background 0.4s, filter 0.4s;
 }
 
+.dot-inner.pulse-red {
+  box-shadow:
+    0 0 80px 40px #ff1744ee,
+    0 0 48px 24px #ff9800ee,
+    0 0 24px 8px #fff8,
+    0 0 8px 2px #fff4;
+  background: radial-gradient(circle at 70% 70%, #fff, #ff1744 70%, #ff980000 100%);
+  filter: brightness(1.5) saturate(2);
+  transition: box-shadow 0.4s, background 0.4s, filter 0.4s;
+}
+
 .dot-inner {
   background: radial-gradient(circle at 70% 70%, #fff, #ff9800 60%, #ff174400 100%);
   box-shadow: 0 0 24px 8px #ff7043cc, 0 0 8px 2px #fff4;
@@ -131,8 +155,8 @@
 /* Outer ring */
 .outer-ring {
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 284px;
+  height: 284px;
   border: 6px solid #80f0ff;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(255,255,255,0.1);
@@ -147,3 +171,25 @@
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
+
+.two-dots-orbiting {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f0faff11;
+  border: 1px solid #00eaff22;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00eaff11;
+}   
+.outer-ring-shell {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}   

@@ -108,43 +108,50 @@
 <body>
     <div class="big-container">
         <header>
-            <div class="logo-name">
-                <a href="index.html" class="logo-link">
-                    <img src="images/logo.svg" alt="Logo" class="logo" />
-                    <h1 class="logo-right-title">Stellar Stories</h1>
-                </a>
-            </div>
-            <nav class="nav-links"> 
+                    <div class="logo-name">
+                        <a href="index.html" class="logo-link">
+                            <img src="images/logo-lp.svg" alt="Logo" class="logo" />
+                            <h1>True Phases of Life</h1>
+                        </a>
+                    </div>
+                        <nav class="nav-links"> 
+          <div class="dropdown">
+            <button class="dropbtn">Menu &#9662;</button>
+            <div class="dropdown-content">
+              <a href="about.html">About</a>
               <a href="feedback.html">Feedback</a>
               <a href="time.html">Time</a>
-            </nav>
-        </header>
+              <a href="amazonLinks.html">Get Your Copy</a>
+            </div>
+          </div>
+                        </nav>
+            </header>
             <main></main>
                 <h2 class="heading">Visit Amazon in Your Country</h2>
                    <div class="link-list">
                     <p class="description">Click your country to buy "True Phases of Life" on Amazon:</p>
                     <div id="countryLinksContainer"></div>
                 </div>
+                
                 <div class="above-footer"></div>
-                <footer>
-                    <div class="footer-col">
-                    <img src="images/logo.png" alt="Logo" class="footer-logo" />
+          <footer>
+                <div class="footer-container">
+                    <div class="footer-row footer-row-top">
+                        <div class="footer-contact">
+                            <span class="footer-connect-label">Connect:</span> <a href="mailto:email@stellarstories.com" class="footer-email">email@stellarstories.com</a>
+                        </div>
+                        <div class="footer-social">
+                            <span class="footer-social-label">Social platform and communities:</span>
+                            <a href="https://www.instagram.com/truniv.life/" target="_blank" aria-label="Instagram"><img src="images/instagram-icon.png" alt="Instagram" class="insta-icon" /></a>
+                            <a href="https://discord.com/" target="_blank" aria-label="Discord"><img src="images/discord-icon.svg" alt="Discord" class="discord-icon" /></a>
+                        </div>
                     </div>
-                    <div class="footer-col">
-                    <h3>About</h3>
-                    <p>Stellar Stories brings you tales from the farthest reaches of space.</p>
+                    <div class="footer-row footer-row-bottom">
+                        <img src="images/truniv-logo.png" alt="Logo" class="footer-logo" />
+                        <p class="copy-rights">© 2025 True Phases of Life. All rights reserved.</p>
                     </div>
-                    <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p>email@stellarstories.com</p>
-                    <a href="https://instagram.com/yourprofile" target="_blank">
-                        <img src="images/instagram-icon.png" alt="Instagram" class="icon" />
-                    </a>
-                    </div>
-                    <div class="footer-col">
-                    <p>© 2025 Stellar Stories. All rights reserved.</p>
-                    </div>
-                </footer>
+                </div>
+            </footer>
                 </main>
             </div>
                
@@ -231,6 +238,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       soonContainer.appendChild(soonText);
       linkItem.appendChild(soonContainer);
+    } else {
+      // Show a small book cover icon on the right
+  const bookIconContainer = document.createElement("div");
+  bookIconContainer.className = "right-text-country-container";
+  const bookIconLink = document.createElement("a");
+  bookIconLink.href = url;
+  bookIconLink.target = "_blank";
+  bookIconLink.style.display = "block";
+  const bookIcon = document.createElement("img");
+  bookIcon.src = "images/book-front-cover-icon.PNG";
+  bookIcon.alt = "Book Cover";
+  bookIcon.style.width = "28px";
+  bookIcon.style.height = "auto";
+  bookIcon.style.display = "block";
+  bookIcon.style.marginLeft = "auto";
+  bookIcon.style.marginRight = "1rem";
+  bookIcon.style.borderRadius = "4px";
+  bookIcon.style.cursor = "pointer"; // Prevents the icon from being clickable
+  bookIconLink.appendChild(bookIcon);
+  bookIconContainer.appendChild(bookIconLink);
+  linkItem.appendChild(bookIconContainer);
     }
 
     container.appendChild(linkItem);
@@ -238,5 +266,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-            </body>
+   </body>
 </html>
