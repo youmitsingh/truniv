@@ -6,14 +6,15 @@
 .dropbtn {
   background-color: #1E293B;
   color: #8ef;
-  padding: 0.5rem 1.2rem;
+  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
   font-size: 1rem;
   border: 2px solid #8ef;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s, color 0.3s;
 }
+
 .dropbtn:hover, .dropbtn:focus {
   background-color: #22304a;
   color: #aef;
@@ -21,12 +22,15 @@
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0%; /* Position it fully to the left of the parent */
+  top: 100%; /* Align vertically with the trigger */
   background-color: #22304a;
   min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
   border-radius: 8px;
-  margin-top: 0.5rem;
+  margin-right: 0.5rem; /* Space between trigger and dropdown */
+
 }
 .dropdown-content a {
   color: #8ef;
@@ -291,7 +295,7 @@ main {
 }
 
 .equation-meaning {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #1e293b;
   line-height: 2.5rem;
@@ -332,6 +336,7 @@ main {
   box-shadow: 0 0 10px rgba(142, 239, 255, 0.2);
   transition: transform 0.3s ease;
   padding: 1rem;
+  background-color: #1E293B;
 }
 
 .brain-content-wrapper {
@@ -369,7 +374,7 @@ main {
 }
 
 .brain-text {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #d6faff;
   line-height: 1.4;
@@ -423,7 +428,7 @@ main {
 
 
 .eiv-image {
-  width: 80%;
+  width: 93%;
   max-width: 600px;
   height: auto;
   margin: 2rem auto;
@@ -478,12 +483,13 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(142, 239, 255, 0.2);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.book-cover:hover {
-  transform: scale(1.6);
+.book-cover.zoomed {
+  transform: scale(1.7);
   box-shadow: 0 0 6px rgba(142, 239, 255, 0.2);
-
+  z-index: 20;  
 }
 
 .book-description {
@@ -701,7 +707,7 @@ main {
     flex-direction: column;    /* Stack vertically on smaller screens */
     align-items: flex-end;     /* Align to the right side of header */
     gap: 1rem;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
 
   }
   main {

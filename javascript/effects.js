@@ -1,46 +1,91 @@
 // Dropdown menu toggle (click to open/close)
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.dropbtn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', function () {
+  // Book cover zoom for mobile and desktop (toggle on tap/click)
+  document.querySelectorAll('.book-cover').forEach(function(cover) {
+    cover.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Remove zoom from all others
+      document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
+        if (other !== cover) other.classList.remove('zoomed');
+      });
+      // Toggle zoom on this one
+      cover.classList.toggle('zoomed');
+    });
+    // Also support touch events
+    cover.addEventListener('touchend', function(e) {
+      e.stopPropagation();
+      document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
+        if (other !== cover) other.classList.remove('zoomed');
+      });
+      cover.classList.toggle('zoomed');
+    });
+  });
+  // Remove zoom if clicking/tapping elsewhere
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('book-cover')) {
+      document.querySelectorAll('.book-cover.zoomed').forEach(function(cover) {
+        cover.classList.remove('zoomed');
+      });
+    }
+  });
+  document.addEventListener('touchend', function(e) {
+    if (!e.target.classList.contains('book-cover')) {
+      document.querySelectorAll('.book-cover.zoomed').forEach(function(cover) {
+        cover.classList.remove('zoomed');
+      });
+    }
+  });
+  document.querySelectorAll('.dropbtn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
+      e.stopPropagation();
+
       const dropdown = btn.closest('.dropdown');
       const content = dropdown.querySelector('.dropdown-content');
-      // Toggle open/close
-      if (content.style.display === 'block') {
-        content.style.display = '';
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        // Close any other open dropdowns
-        document.querySelectorAll('.dropdown-content').forEach(function(dc) {
-          dc.style.display = '';
-        });
+      const isVisible = window.getComputedStyle(content).display !== 'none';
+
+      // Close all dropdowns
+      document.querySelectorAll('.dropdown-content').forEach(function (dc) {
+        dc.style.display = 'none';
+      });
+      document.querySelectorAll('.dropbtn').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current dropdown
+      if (!isVisible) {
         content.style.display = 'block';
         btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
+
   // Close dropdown when a menu option is clicked
-  document.querySelectorAll('.dropdown-content a').forEach(function(link) {
-    link.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown-content a').forEach(function (link) {
+    link.addEventListener('click', function () {
       const dropdown = link.closest('.dropdown');
       const content = dropdown.querySelector('.dropdown-content');
       const btn = dropdown.querySelector('.dropbtn');
-      content.style.display = '';
+      content.style.display = 'none';
       btn.setAttribute('aria-expanded', 'false');
     });
   });
-  // Close dropdown if click outside
-  document.addEventListener('click', function(e) {
+
+  // Close dropdown if clicking outside
+  document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown-content').forEach(function(dc) {
-        dc.style.display = '';
+      document.querySelectorAll('.dropdown-content').forEach(function (dc) {
+        dc.style.display = 'none';
       });
-      document.querySelectorAll('.dropbtn').forEach(function(btn) {
+      document.querySelectorAll('.dropbtn').forEach(function (btn) {
         btn.setAttribute('aria-expanded', 'false');
       });
     }
   });
 });
+
+
+
 // 🌌 Star Shower Generator
 function createStarShower() {
   const star = document.createElement("div");

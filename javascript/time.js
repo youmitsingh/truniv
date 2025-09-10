@@ -13,11 +13,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const containerRect = ringContainer.getBoundingClientRect();
   const center = { x: 150, y: 150 }; // 300x300 container
   // Ring radii: (outer ring: 280px diameter, border 10px) => center to middle of border
-  const outerRadius = 172; // 280/2
+  const outerRadius = 166; // 280/2
   // Place dot on the center of the border visually
   const outerDotOffset = 0; // visually, dot is centered
   // Inner ring: 180px diameter, border 8px
-  const innerRadius = 125; // 230/2
+  const innerRadius = 115; // 230/2
   const innerDotOffset = 0;
 
   let tOuter = 0;

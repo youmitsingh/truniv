@@ -95,17 +95,17 @@
 /* Equilateral triangle placement (centered on ring-container) */
 .lp1 {
   left: 50%;
-  top: -5px;
+  top: 2px;
   transform: translate(-50%, 0);
 }
 .lp2 {
-  left: 15px;
+  left: 24px;
   top: 180px;
   transform: none;
 }
 .lp3 {
-  right: 15px;
-  top: 177px;
+  right: 24px;
+  top: 180px;
   transform: none;
 }
 
@@ -155,8 +155,8 @@
 /* Outer ring */
 .outer-ring {
   position: absolute;
-  width: 284px;
-  height: 284px;
+  width: 266px;
+  height: 266px;
   border: 6px solid #80f0ff;
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(255,255,255,0.1);
@@ -165,8 +165,8 @@
 /* Inner ring */
 .inner-ring {
   position: absolute;
-  width: 228px;
-  height: 228px;
+  width: 208px;
+  height: 208px;
   border: 6px solid #80f0ff;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(255,255,255,0.2);
