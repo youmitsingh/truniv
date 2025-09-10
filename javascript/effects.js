@@ -3,24 +3,30 @@ document.addEventListener('DOMContentLoaded', function () {
   // Book cover zoom for mobile and desktop (toggle on tap/click)
   document.querySelectorAll('.book-cover').forEach(function(cover) {
     cover.addEventListener('click', function(e) {
-      e.stopPropagation();
-      // Remove zoom from all others
-      document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
-        if (other !== cover) other.classList.remove('zoomed');
-      });
-      // Toggle zoom on this one
-      cover.classList.toggle('zoomed');
+      // If already zoomed, any tap zooms out
+      if (cover.classList.contains('zoomed')) {
+        cover.classList.remove('zoomed');
+      } else {
+        // Remove zoom from all others
+        document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
+          other.classList.remove('zoomed');
+        });
+        cover.classList.add('zoomed');
+      }
     });
-    // Also support touch events
     cover.addEventListener('touchend', function(e) {
-      e.stopPropagation();
-      document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
-        if (other !== cover) other.classList.remove('zoomed');
-      });
-      cover.classList.toggle('zoomed');
+      // If already zoomed, any tap zooms out
+      if (cover.classList.contains('zoomed')) {
+        cover.classList.remove('zoomed');
+      } else {
+        document.querySelectorAll('.book-cover.zoomed').forEach(function(other) {
+          other.classList.remove('zoomed');
+        });
+        cover.classList.add('zoomed');
+      }
     });
   });
-  // Remove zoom if clicking/tapping elsewhere
+  // Remove zoom if clicking/tapping anywhere else
   document.addEventListener('click', function(e) {
     if (!e.target.classList.contains('book-cover')) {
       document.querySelectorAll('.book-cover.zoomed').forEach(function(cover) {
@@ -35,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+
+//Drop down menu toggle (click to open/close)
+  document.addEventListener('DOMContentLoaded', function () {
+  // Track currently open dropdown
+  let activeDropdown = null;
+
   document.querySelectorAll('.dropbtn').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -42,21 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const dropdown = btn.closest('.dropdown');
       const content = dropdown.querySelector('.dropdown-content');
-      const isVisible = window.getComputedStyle(content).display !== 'none';
 
-      // Close all dropdowns
-      document.querySelectorAll('.dropdown-content').forEach(function (dc) {
-        dc.style.display = 'none';
-      });
-      document.querySelectorAll('.dropbtn').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-      });
-
-      // Toggle current dropdown
-      if (!isVisible) {
-        content.style.display = 'block';
-        btn.setAttribute('aria-expanded', 'true');
+      // If this dropdown is already open, close it
+      if (activeDropdown === content) {
+        content.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        activeDropdown = null;
+        return;
       }
+
+      // Close any previously open dropdown
+      if (activeDropdown) {
+        activeDropdown.style.display = 'none';
+        document.querySelectorAll('.dropbtn').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      // Open the current dropdown
+      content.style.display = 'block';
+      btn.setAttribute('aria-expanded', 'true');
+      activeDropdown = content;
     });
   });
 
@@ -68,23 +86,24 @@ document.addEventListener('DOMContentLoaded', function () {
       const btn = dropdown.querySelector('.dropbtn');
       content.style.display = 'none';
       btn.setAttribute('aria-expanded', 'false');
+      activeDropdown = null;
     });
   });
 
   // Close dropdown if clicking outside
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown')) {
-      document.querySelectorAll('.dropdown-content').forEach(function (dc) {
-        dc.style.display = 'none';
-      });
-      document.querySelectorAll('.dropbtn').forEach(function (btn) {
-        btn.setAttribute('aria-expanded', 'false');
-      });
+      if (activeDropdown) {
+        activeDropdown.style.display = 'none';
+        document.querySelectorAll('.dropbtn').forEach(function (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+        });
+        activeDropdown = null;
+      }
     }
   });
 });
-
-
+});
 
 // 🌌 Star Shower Generator
 function createStarShower() {

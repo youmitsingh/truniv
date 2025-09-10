@@ -29,7 +29,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 10;
   border-radius: 8px;
-  margin-right: 0.5rem; /* Space between trigger and dropdown */
+  margin-right: 0.2rem; /* Space between trigger and dropdown */
 
 }
 .dropdown-content a {
@@ -50,6 +50,7 @@
 .dropdown:focus-within .dropdown-content {
   display: block;
 }
+
 /* Reset & Base */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
