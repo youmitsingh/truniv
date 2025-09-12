@@ -175,9 +175,9 @@
 .two-dots-orbiting {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 100%;
   margin: 40px auto;
-  padding: 20px;
+  padding: 10px;
   background: #f0faff11;
   border: 1px solid #00eaff22;
   border-radius: 10px;
@@ -193,3 +193,69 @@
   align-items: center;
   justify-content: center;
 }   
+
+/*time body text section*/
+
+.time-body-text-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.time-body-text-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.time-title {
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+.time-body-text {
+  margin-top: 1.2rem;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.time-calculator-section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f0faff11;
+  border: 1px solid #00eaff22;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00eaff11;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.time-calculator-title {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+.time-calculator-text {
+  margin-top: 1.2rem;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.time-calculator-image{
+  display: block;
+  max-width: 320px;
+  width: 70%;
+  height: auto;
+  margin: 20px auto;
+  opacity: 0.45;
+  filter: grayscale(01.25rem) brightness(0.8);
+  transition: opacity 0.3s, filter 0.3s;
+}

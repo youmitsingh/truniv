@@ -37,28 +37,26 @@
 
   <main class="main-container">
     <section class="message-top" id="messageTop">
-      <h3 class="main-heading">Thank you for visiting — I hope you're doing well.</h3>
+      <h3 class="main-heading">Welcome to the ADD Bar Feedback Portal</h3>
       <p class="statement">
-        Each chapter includes an ADD bar where you can share your thoughts by sliding the center knob.
-        We recommend submitting feedback after completing all chapters, then saving it in one go.
-        A thoughtfully designed webpage, rich with valuable insights, is coming soon. Stay tuned.
-      </p>
-    </section>
+        If you've arrived here from the book, you already know what the ADD Bar is all about. 
+        If you're simply exploring the site—curious and wandering—let me shine a little light on this concept.
+        The ADD Bar is a symbolic tool to reflect your decisions. Every choice we make—whether bold or 
+        uncertain—can be placed into one of three emotional boxes:
+        Agree, Disagree, or Don’t Know.<br><br>
+        But here's the twist: these boxes aren't just binary switches. Their depth 
+        is shaped by your emotional intensity—your feelings, your hesitations, your 
+        convictions. So while the categories may seem digital, the decisions themselves are deeply analog. 
+        They carry nuance, weight, and story.<br><br>
+        Your feedback matters. Once you've completed all the chapters, you're invited to submit 
+        your reflections using the ADD Bar. Your input will help illuminate the emotional landscape of 
+        this book—and once enough responses are gathered, I’ll share the aggregated results with everyone.
+        Thank you in advance for being part of this journey. Your voice adds dimension to the story.
 
-    <section class="output-bar" id="outputBar">
-      <p class="message-for-result">
-        After collecting enough responses, this section will automatically present the aggregated feedback score.
-      </p>
-      <div class="feedback-result">
-        <input type="range" class="output-range-circle" min="0" max="100" value="50" id="outputSlider" disabled />
-        <div class="slider-labels-output">
-          <span>Disagree</span>
-          <span class = "output=dontknow">Don't know</span>
-          <span>Agree</span>
-        </div>
-        <div class="people-output">The Law of 'People'</div>
-      </div>
+       </p>
     </section>
+ <!-- Output section shifted to down after feedback chapters bars-->
+    
     
      <!-- Law sections without the “LawX:” prefix in UI -->
     <section class="all-feedback-bars" id="allFeedbackBars">
@@ -183,7 +181,23 @@
         </div>
       </div>
     </section>
-
+    
+    <!-- new ouput section place-->
+     <section class="output-bar" id="outputBar">
+      <p class="message-for-result">
+        After collecting enough responses, this section will enable for aggregated feedback score.
+      </p>
+      <div class="feedback-result">
+        <input type="range" class="output-range-circle" min="0" max="100" value="50" id="outputSlider" disabled />
+        <div class="slider-labels-output">
+          <span>Disagree</span>
+          <span class = "output=dontknow">Don't know</span>
+          <span>Agree</span>
+        </div>
+        <div class="people-output">The Law of 'People'</div>
+      </div>
+    </section>
+    <!-- User details and feedback form -->
     <form class = "feedback-form" id="feedbackForm">
       <section class="user-details" id="userDetails">
         <p class="user-details-message">
@@ -229,21 +243,27 @@
     </form>
 
   </main>
-        <div class="above-footer"></div>
+        
           <footer>
                 <div class="footer-container">
                     <div class="footer-row footer-row-top">
-                        <div class="footer-contact">
-                            <span class="footer-connect-label">Connect:</span> <a href="mailto:email@stellarstories.com" class="footer-email">email@stellarstories.com</a>
-                        </div>
-                        <div class="footer-social">
-                            <span class="footer-social-label">Social platform and communities:</span>
-                            <a href="https://www.instagram.com/truniv.life/" target="_blank" aria-label="Instagram"><img src="images/instagram-icon.png" alt="Instagram" class="insta-icon" /></a>
-                            <a href="https://discord.com/" target="_blank" aria-label="Discord"><img src="images/discord-icon.svg" alt="Discord" class="discord-icon" /></a>
-                        </div>
-                    </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/truniv.life" target="_blank" class="social-link">
+                                <img src="images/instagram-icon.png" alt="Instagram" class="icon" />
+                                <span class="social-text">@truniv.life</span>
+                            </a>
+                             </div>
+                             <a href="mailto:youmit@tuniv.life" class="social-link">
+                                <img src="images/mail-icon.png" alt="Email" class="icon" />
+                                <span class="social-text">youmit@truniv.life</span>
+                            </a>
+                            </div>
+                    </div> 
                     <div class="footer-row footer-row-bottom">
+                        <div class = "tooltip-container">
                         <img src="images/truniv-logo.png" alt="Logo" class="footer-logo" />
+                        <span class="tooltip-text"><www class="truniv life">www.truniv.life</www> The Journey Begins Shortly</span>
+                        </div>
                         <p class="copy-rights">© 2025 True Phases of Life. All rights reserved.</p>
                     </div>
                 </div>

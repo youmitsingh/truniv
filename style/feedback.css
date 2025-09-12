@@ -15,7 +15,9 @@
 .statement {
   font-size: 1rem;
   line-height: 1.6;
-  color: #eaeaea;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
 }
 
 .message-top{
@@ -35,6 +37,8 @@
   padding: 20px;
   border: 2px dotted #1ffff8;
   border-radius: 10px;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
 }
 
 .message-for-result {
@@ -96,25 +100,17 @@ input[type="range-out"] {
 
 /* 🌌 Container for all feedback sections */
 .all-feedback-bars {
-  padding: 1rem;
-  padding-bottom: 2rem; /* Extra scroll comfort on mobile */
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  padding-block: 0; /* removes top/bottom padding */
+  margin-block: 0;  /* ensures no extra margin */
+
 }
 
-/* 🌠 Individual law section */
-.all-law-section {
-  background: rgba(255, 255, 255, 0.03);
-  border: 2px solid #8ef;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
-  margin: 3rem auto;
-  width: 80%;
-  max-width: 1000px;
-  min-width: 420px;
-  box-sizing: border-box;
-}
+
+
+
 
 /* 📱 Mobile adjustments */
 @media (max-width: 480px) {
@@ -152,13 +148,7 @@ input[type="range-out"] {
   }
 }
 
-/* 🌌 Container for all feedback sections */
-.all-feedback-bars {
-  padding: 0.5rem;
-  /*padding-bottom: 15rem;*/ /* Extra scroll comfort on mobile */
-  box-sizing: border-box;
-  
-}
+
 
 /* 🌠 Individual law section */
 .all-law-section {
@@ -168,8 +158,9 @@ input[type="range-out"] {
   padding: 0rem;
   text-align: center;
   box-shadow: 0 0 20px rgba(142, 239, 255, 0.15);
-  margin: 10rem auto;
-  margin-top: 5rem;
+  margin: 5rem auto;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
   width: 95%;
   max-width: 1000px;
   min-width: 420px;
